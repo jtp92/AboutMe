@@ -10,6 +10,7 @@ var locale = "utf8"
 
 function handleRequest(request, response) {
 	fs.readFile(webPageFile, locale, function (error, data) {
+		response.setHeader('content-type', 'text/html');
 		response.write(data);
 		console.log("Page hit!");
 		response.end();
